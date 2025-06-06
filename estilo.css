@@ -1,0 +1,64 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 20px;
+    color: #222;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #34495e;
+  }
+  /* Contenedor pestañas */
+  .tabs {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  /* Botones pestañas */
+  .tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .tab-buttons button {
+    background: #2980b9;
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .tab-buttons button.active,
+  .tab-buttons button:hover {
+    background: #1c5980;
+  }
+  /* Contenido pestañas */
+  .tab-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 7px 15px rgba(0,0,0,0.1);
+    min-height: 250px;
+  }
+  /* Lista de archivos */
+  ul.file-list {
+    list-style: none;
+    padding: 0;
+  }
+  ul.file-list li {
+    margin-bottom: 12px;
+  }
+  ul.file-list li a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  ul.file-list li a:hover {
+    border-color: #2980b9;
+  }

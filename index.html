@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="../programacionWeb/estilo.css">
+<title>Pagina de practicas</title>
+</head>
+<body>
+  <h1>Pr&aacute;cticas Del Semestre</h1>
+
+  <div class="tabs">
+    <div class="tab-buttons">
+      <button class="active" data-tab="html">HTML</button>
+      <button data-tab="css">CSS</button>
+      <button data-tab="js">JavaScript</button>
+    </div>
+    <div class="tab-content" id="tab-content">
+      <!-- Aquí se carga el contenido dinámicamente -->
+      <h2>HTML</h2>
+      <ul class="file-list">
+        <li><a href="../programacionWeb/holaMundo/etiquetas.html" target="_self">Hello World</a></li>
+        <li><a href="../programacionWeb/paginaBasica/pagina.html" target="_self">Pagina Basica</a></li>
+        <li><a href="../programacionWeb/vistaPreliminar/index.html" target="_self">Vista Preliminar de paginas WEB</a></li>
+        <li><a href="../programacionWeb/html5-semantic-tags/index.html" target="_self">Semantic-tags</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-buttons button');
+    const content = document.getElementById('tab-content');
+
+    const files = {
+      html: [
+        { name: 'Hello World', link: '../programacionweb/holaMundo/etiquetas.html' },
+        { name: 'Pagina Basica', link: '../programacionWeb/paginaBasica/pagina.html' },
+        { name: 'Vista Preliminar de paginas WEB', link: '../programacionWeb/vistaPreliminar/index.html' },
+        { name: 'Semantic-tags', link: '../programacionWeb/html5-semantic-tags/index.html' }
+      ],
+      css: [
+        { name: 'Monalisa', link: '../programacionweb/monalisa/index.html' },
+        { name: 'Modelo Caja', link: '../programacionweb/modeloCaja/index.html' },
+        { name: 'Flexbox', link: '../programacionweb/flexbox/index.html' },
+        { name: 'GridLayout', link: '../programacionweb/gridLayout/index.html' },
+        { name: 'Formulario Basico', link: '../programacionweb/formularios/ejemploforms.html' },
+        { name: 'Formulario con Validaciones', link: '../programacionweb/registro-empleado/index.html' },
+        { name: 'Tablas con CSS', link: '../programacionweb/tablas/basicas.html' }
+      ],
+      js: [
+        { name: 'Hola js', link: '../programacionweb/javascript/holaMundo/index.html' },
+        { name: 'Arrays (Indices y Asociativos)', link: '../programacionweb/arrayObjetos/index.html' },
+        { name: 'Clases', link: '../programacionweb/clases/index.html' },
+        { name: 'Ejercicio 9', link: '../programacionweb/ejercicio9/index.html' },
+        { name: 'Uso de Fetch', link: '../programacionweb/peticionesHTTP/formulario.html' },
+      ]
+    };
+
+    function loadTab(tabName) {
+      content.innerHTML = `<h2>${tabName.toUpperCase()}</h2>`;
+
+      const ul = document.createElement('ul');
+      ul.classList.add('file-list');
+
+      files[tabName].forEach(file => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = file.link;
+        a.textContent = file.name;
+        a.target = '_self';
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+
+      content.appendChild(ul);
+    }
+
+    tabs.forEach(button => {
+      button.addEventListener('click', () => {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        loadTab(button.dataset.tab);
+      });
+    });
+  </script>
+</body>
+</html>

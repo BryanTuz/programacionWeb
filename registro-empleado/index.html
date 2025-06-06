@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registro de empleados - Restaurante Rápido y Sabroso</title>
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	
+	<div class="container">
+        <h2>Restaurante Rápido y Sabroso</h2>
+        <form id="registro-form" action="#" method="POST">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,50}$" title="Solo letras y espacios, mínimo 3 caracteres" placeholder="Ingrese su nombre completo">
+            
+            <label for="cargo">Cargo:</label>
+            <input type="text" id="cargo" name="cargo" required pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,30}$" title="Solo letras y espacios, mínimo 3 caracteres" placeholder="Ingrese su cargo">
+            
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required pattern="^[0-9]{10}$" title="Debe contener 10 dígitos numéricos" placeholder="Ingrese su número de teléfono">
+            
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+	<script>
+        document.getElementById("registro-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+            alert("Registro exitoso. Sus datos han sido guardados correctamente.");
+            this.reset(); // Limpia el formulario
+        });
+    </script>
+</body>
+</html>

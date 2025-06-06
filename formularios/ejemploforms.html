@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ejemplo de formulario sencillo</title>
+</head>
+<body>
+	<h3>Formulario muy sencillo</h3>
+		<form action="../formularios/procesa.php" method="post" autocomplete="off">
+			Escribe tu nombre:
+			<input type="text" name="nombre" value="" />
+			<br/>
+			<input type="submit" value="Enviar" />
+
+			<br>
+			<br>
+			URL: <input type="url" name="web" placeholder="https://pagina.com/">
+			<br>
+			Teléfono: <input type="tel" name="telefono" placeholder="+XX XXX XXXXXX">
+			<br>
+			Email: <input type="email" name="correo" placeholder="nombre@dominio.com">
+			<br/>
+
+			<h3>Ejemplo de correos</h1>
+			Usuario: <input type="text" name="nombre" placeholder="Por ejemplo, Juan">
+		    Password: <input type="password" name="pass" placeholder="Contraseña">
+		    <input type="hidden" name="informacion" value="72625">
+
+		    <h3>Escoge tu edad</h3>
+		    <input type="range" value="0.0" onInput="this.nextElementSibling.value = this.value">
+			<output>0</output>
+
+			<h3>Selecciona el color deseado para el fondo:</h3>
+  			<input type="color" id="ColorPicker">
+
+  			<br>
+  			<input type="reset" value="Borrar formulario">
+		</form>
+		
+		<script type="text/javascript">
+			function recibeform(){
+				alert("Formulario Recibido");
+			}
+
+			const colorInput = document.getElementById("ColorPicker");
+
+        	colorInput.addEventListener("input", function () {
+            document.body.style.backgroundColor = colorInput.value;
+        	});
+        	
+		</script>
+</body>
+</html>

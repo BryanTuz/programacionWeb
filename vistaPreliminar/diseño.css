@@ -1,0 +1,19 @@
+body{
+  background-color: #8afc80;
+}
+h1 {
+  text-align: center;
+}
+
+.contenedor{
+  display: flex;
+}
+
+img {
+  width: 200px;
+}
+ 
+p {
+  display: inline;
+  text-align: left;
+}
