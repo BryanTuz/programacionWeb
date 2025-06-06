@@ -15,7 +15,7 @@ xhtml1/DTD/xhtml1-transitional.dtd">
         // Preparar la funcion de respuesta
         peticion_http.onreadystatechange = muestraContenido;
         // Realizar peticion HTTP
-        peticion_http.open('GET', 'http://localhost/programacionweb/programacionWeb/peticionesHTTP/datos.xml', true);
+        peticion_http.open('GET', 'https://bryantuz.github.io/programacionWeb/peticionesHTTP/datos.xml', true);
         peticion_http.send(null);
         function muestraContenido() {
         if(peticion_http.readyState == 4) {
