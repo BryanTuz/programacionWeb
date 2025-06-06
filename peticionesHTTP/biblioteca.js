@@ -1,5 +1,5 @@
 function cargarDatos() {
-  const promise = fetch("http://localhost/programacionweb/programacionWeb/peticionesHTTP/datos.xml");
+  const promise = fetch("https://bryantuz.github.io/programacionWeb/peticionesHTTP/datos.xml");
 
   promise.then(function (response) {
     const divContent = document.getElementById("contenedor");
